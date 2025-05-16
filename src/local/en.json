@@ -1,12 +1,12 @@
 {
-  "home": "Home",
-  "about": "About Us",
-  "services": "Services",
-  "webDev": "Web Development",
-  "appDev": "App Development",
-  "seo": "SEO (Search Engine Optimization)",
-  "news": "News/Events",
-  "portfolio": "Portfolio",
-  "contact": "Contact Us",
-  "company": "ABC Company"
+  "navbar_home": "Home",
+  "navbar_about": "About Us",
+  "navbar_services": "Services",
+  "navbar_webDev": "Web Development",
+  "navbar_appDev": "App Development",
+  "navbar_seo": "SEO (Search Engine Optimization)",
+  "navbar_news": "News/Events",
+  "navbar_portfolio": "Portfolio",
+  "navbar_contact": "Contact Us",
+  "navbar_company": "ABC Company"
 }

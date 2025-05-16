@@ -41,21 +41,21 @@ const MyNavbar = () => {
     <Navbar expand="lg" className="navbar-custom" sticky="top">
       <Container>
         <Navbar.Brand as={Link} to="/" className="navbar-logo">
-          {translations.company}
+          {translations.navbar_company}
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbar-nav" />
         <Navbar.Collapse id="navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link as={Link} to="/">{translations.home}</Nav.Link>
-            <Nav.Link as={Link} to="/about">{translations.about}</Nav.Link>
-            <NavDropdown title={translations.services} id="nav-dropdown">
-              <NavDropdown.Item as={Link} to="/service/web-development">{translations.webDev}</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/service/app-development">{translations.appDev}</NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="/service/seo">{translations.seo}</NavDropdown.Item>
+            <Nav.Link as={Link} to="/">{translations.navbar_home}</Nav.Link>
+            <Nav.Link as={Link} to="/about">{translations.navbar_about}</Nav.Link>
+            <NavDropdown title={translations.navbar_services} id="nav-dropdown">
+              <NavDropdown.Item as={Link} to="/service/web-development">{translations.navbar_webDev}</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/service/app-development">{translations.navbar_appDev}</NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="/service/seo">{translations.navbar_seo}</NavDropdown.Item>
             </NavDropdown>
-            <Nav.Link as={Link} to="/news">{translations.news}</Nav.Link>
-            <Nav.Link as={Link} to="/portfolio">{translations.portfolio}</Nav.Link>
-            <Nav.Link as={Link} to="/contact">{translations.contact}</Nav.Link>
+            <Nav.Link as={Link} to="/news">{translations.navbar_news}</Nav.Link>
+            <Nav.Link as={Link} to="/portfolio">{translations.navbar_portfolio}</Nav.Link>
+            <Nav.Link as={Link} to="/contact">{translations.navbar_contact}</Nav.Link>
 
             <Nav.Link onClick={toggleLanguage} title="เปลี่ยนภาษา" className="icon-button">
                <img src={language === 'en' ? thFlag : enFlag} alt="toggle language" />

@@ -1,12 +1,12 @@
 {
-  "home": "หน้าแรก",
-  "about": "เกี่ยวกับเรา",
-  "services": "บริการ",
-  "webDev": "พัฒนาเว็บไซต์",
-  "appDev": "พัฒนาแอปพลิเคชัน",
-  "seo": "SEO (Search Engine Optimization)",
-  "news": "ข่าวสาร/กิจกรรม",
-  "portfolio": "ผลงาน",
-  "contact": "ติดต่อเรา",
-  "company": "บริษัท ABC"
+  "navbar_home": "หน้าแรก",
+  "navbar_about": "เกี่ยวกับเรา",
+  "navbar_services": "บริการ",
+  "navbar_webDev": "พัฒนาเว็บไซต์",
+  "navbar_appDev": "พัฒนาแอปพลิเคชัน",
+  "navbar_seo": "SEO (Search Engine Optimization)",
+  "navbar_news": "ข่าวสาร/กิจกรรม",
+  "navbar_portfolio": "ผลงาน",
+  "navbar_contact": "ติดต่อเรา",
+  "navbar_company": "บริษัท ABC"
 }
