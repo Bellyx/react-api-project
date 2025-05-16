@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Navbar, Nav, NavDropdown, Container } from 'react-bootstrap';
-import { FaGlobe } from 'react-icons/fa';
+// import { FaGlobe } from 'react-icons/fa';
 import th from '../local/th.json';
 import en from '../local/en.json';
 import '../assets/css/Navbar.css';
@@ -17,7 +17,8 @@ const MyNavbar = () => {
     '/admin/Dashboard',
     '/admin/EditAboutPage',
     '/admin/EditContactPage',
-    '/admin/EditLandingPage'
+    '/admin/EditLandingPage',
+    '/admin/EditPortfolioPage'
   ];
 
   const [language, setLanguage] = useState('th');

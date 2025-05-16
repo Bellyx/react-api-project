@@ -14,6 +14,7 @@ import DashboardPage from './pages/admin/DashboardPage';
 import EditLandingPage from './pages/admin/EditLandingPage';
 import EditAboutPage from './pages/admin/EditAboutPage';
 import EditContactPage from './pages/admin/EditContactPage';
+import EditPortfolioPage from './pages/admin/EditPortfolioPage';
 import ProtectedRoute from './routes/ProtectedRoute'; // เส้นทางที่ล็อกอินเท่านั้นถึงเข้าได้
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'slick-carousel/slick/slick.css';
@@ -54,6 +55,13 @@ const App = () => {
             element={
               <ProtectedRoute>
               <EditAboutPage/> 
+              </ProtectedRoute>
+            }
+          />
+           <Route path="/admin/EditPortfolioPage"
+            element={
+              <ProtectedRoute>
+              <EditPortfolioPage/> 
               </ProtectedRoute>
             }
           />

@@ -1,0 +1,143 @@
+/* ส่วน container หลักที่ใช้จัดตำแหน่ง sidebar และ content */
+.main-container {
+  display: flex;
+  min-height: 100vh;  /* ให้สูงเต็มหน้าจอ */
+  flex-direction: row; /* จัดให้ sidebar อยู่ด้านซ้าย content อยู่ขวา */
+}
+
+/* สไตล์สำหรับ Sidebar */
+.sidebar {
+  width: 250px;  /* กำหนดความกว้างของ Sidebar */
+  background-color: #343a40;
+  color: white;
+  padding: 20px;
+  height: 100vh;  /* ให้ Sidebar สูงเต็มหน้าจอ */
+  position: fixed;  /* ให้ Sidebar อยู่คงที่ */
+}
+
+/* สไตล์ของ Content (ส่วนที่เป็นหน้าหลัก) */
+.content {
+  flex-grow: 1; /* ใช้พื้นที่ที่เหลือ */
+  margin-left: 250px;  /* เลื่อนเนื้อหาให้พ้นจาก Sidebar */
+  padding: 20px;
+  background-color: #f8f9fa;
+}
+
+/* ปรับให้ container ของตารางและเนื้อหาดูดี */
+.portfolio-container {
+  padding: 20px;
+  max-width: 1200px; /* กำหนดความกว้างสูงสุด */
+  margin: 0 auto;  /* ให้คอนเทนเนอร์อยู่ตรงกลาง */
+}
+
+/* สำหรับปุ่มที่ใช้งานในตาราง */
+button {
+  margin-right: 10px;
+}
+
+/* สไตล์ของตาราง */
+.table {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+  text-align: center;
+  vertical-align: middle;
+  padding: 10px;
+}
+
+.table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+}
+
+.table td {
+  font-size: 1rem;
+  color: #495057;
+}
+
+.table td img {
+  border-radius: 4px;
+}
+
+/* ปุ่มเพิ่มและปุ่มแก้ไข */
+button.btn-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+button.btn-warning {
+  background-color: #ffc107;
+  color: white;
+}
+
+button.btn-danger {
+  background-color: #dc3545;
+  color: white;
+}
+
+/* สไตล์ของ Modal */
+.modal-content {
+  border-radius: 8px;
+}
+
+.modal-header {
+  background-color: #007bff;
+  color: white;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+form .form-control {
+  border-radius: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  padding: 10px;
+}
+
+/* ปรับแต่งปุ่มใน Modal */
+button[type="submit"] {
+  font-size: 1rem;
+  padding: 8px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+button[type="submit"]:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
+}
+
+/* ปรับแต่ง Alert */
+.alert {
+  margin-bottom: 20px;
+}
+
+/* สไตล์ของภาพ */
+.table td img {
+  max-width: 100px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* สไตล์ของตัวอักษรในฟอร์ม */
+.form-label {
+  font-weight: bold;
+  color: #343a40;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
