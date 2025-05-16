@@ -1,0 +1,170 @@
+.container-minimal {
+  display: flex;
+  flex-direction: column; /* จัดเรียงเนื้อหาภายใน container เป็นแนวตั้ง */
+  min-height: 100vh; /* ทำให้ container ครอบคลุมความสูงของ viewport */
+}
+
+.main-content-minimal {
+  flex-grow: 1; /* ให้ main-content ขยายเพื่อเติมพื้นที่ว่าง */
+  padding: 20px;
+  display: flex;
+  flex-direction: column; /* จัดเรียงเนื้อหาใน main-content เป็นแนวตั้ง */
+  align-items: center; /* จัดเรียงเนื้อหาตามแนวขวางให้อยู่ตรงกลาง */
+  justify-content: flex-start; /* จัดเรียงเนื้อหาตามแนวตั้งให้อยู่ด้านบน (หรือ center ถ้าต้องการ) */
+  width: 100%; /* หรือกำหนดขนาดความกว้างที่ต้องการ เช่น max-width: 960px; */
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%; /* ให้ header-actions มีความกว้างเท่า main-content */
+  max-width: 960px; /* ถ้ากำหนด max-width ให้ main-content */
+}
+
+.banner-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%; /* ให้ banner-list มีความกว้างเท่า main-content */
+  max-width: 960px; /* ถ้ากำหนด max-width ให้ main-content */
+}
+
+.header-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.header-actions h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: #333;
+}
+
+.header-actions div button {
+  margin-left: 10px;
+}
+
+.btn-minimal {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #f9f9f9;
+  color: #333;
+  cursor: pointer;
+  font-size: 0.9em;
+  display: inline-flex;
+  align-items: center;
+}
+
+.btn-minimal svg {
+  margin-right: 5px;
+}
+
+.add-btn {
+  background-color: #e0f7fa;
+  border-color: #b2ebf2;
+  color: #00acc1;
+}
+
+.save-btn {
+  background-color: #e8f5e9;
+  border-color: #c8e6c9;
+  color: #388e3c;
+}
+
+.remove-btn {
+  background-color: #ffebee;
+  border-color: #ef9a9a;
+  color: #d32f2f;
+}
+
+.banner-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.banner-item {
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+}
+
+.banner-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.banner-item-header h3 {
+  font-size: 1.1em;
+  margin: 0;
+  color: #555;
+}
+
+.form-group-minimal {
+  margin-bottom: 10px;
+}
+
+.form-group-minimal label {
+  display: block;
+  font-size: 0.9em;
+  color: #777;
+  margin-bottom: 5px;
+}
+
+.form-group-minimal input[type="text"],
+.form-group-minimal textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.image-upload-minimal {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+.upload-label-minimal {
+  padding: 8px 12px;
+  background-color: #eee;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9em;
+  color: #555;
+}
+
+.upload-input-minimal {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+.image-preview-minimal {
+  margin-top: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  overflow: hidden;
+  width: 100%;
+  max-height: 150px;
+}
+
+.preview-img-minimal {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}

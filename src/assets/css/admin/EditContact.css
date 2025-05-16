@@ -1,0 +1,371 @@
+/* --- การตั้งค่าพื้นฐานและตัวแปร CSS --- */
+:root {
+  --primary-color: #007bff; /* สีฟ้าทันสมัย */
+  --primary-hover-color: #0056b3;
+  --secondary-color: #6c757d; /* สีเทา */
+  --light-gray-color: #f8f9fa;
+  --medium-gray-color: #e9ecef;
+  --dark-gray-color: #343a40;
+  --text-color: #212529;
+  --success-color: #28a745;
+  --error-color: #dc3545;
+  --white-color: #ffffff;
+  --border-radius: 8px;
+  --input-padding: 12px 15px;
+  --font-family: 'Sarabun', 'Arial', sans-serif; /* หรือฟอนต์ไทยอื่น ๆ ที่คุณชอบ */
+  --box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --transition-speed: 0.3s;
+}
+
+/* --- Global Styles & Resets --- */
+body {
+  font-family: var(--font-family);
+  background-color: var(--light-gray-color);
+  color: var(--text-color);
+  margin: 0;
+  line-height: 1.6;
+}
+
+/* --- Layout หลักของหน้า Edit Contact --- */
+
+
+/* Sidebar (สมมติว่า Sidebar component ของคุณมี class 'sidebar' หรือปรับตามความเหมาะสม) */
+/* หาก Sidebar ของคุณจัดการ styling เอง ส่วนนี้อาจจะไม่จำเป็นมาก */
+.sidebar {
+  width: 250px; /* ปรับขนาดตามต้องการ */
+  background-color: var(--dark-gray-color);
+  color: var(--white-color);
+  padding: 20px;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+  /* เพิ่ม styling อื่นๆ สำหรับ Sidebar ที่นี่ */
+}
+
+/* --- Container หลักสำหรับฟอร์ม --- */
+.form-container {
+  flex-grow: 1; /* ให้ form container ขยายเต็มพื้นที่ที่เหลือ */
+  padding: 30px 40px;
+  margin: 20px; /* เพิ่มระยะห่างรอบ form container */
+  background-color: var(--white-color);
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  max-width: 800px; /* จำกัดความกว้างสูงสุด */
+  margin-left: auto; /* จัดกึ่งกลางถ้า sidebar ไม่ได้ fix width */
+  margin-right: auto; /* จัดกึ่งกลาง */
+  opacity: 0;
+  transform: translateY(20px);
+  animation: slideUpFadeIn 0.6s 0.2s ease-out forwards; /* 0.2s คือ delay */
+}
+
+.error-container {
+  text-align: center;
+}
+.error-container h2 {
+  color: var(--error-color);
+  margin-bottom: 15px;
+}
+.error-container p {
+  margin-bottom: 25px;
+  font-size: 1.1em;
+}
+
+
+/* --- Header ของฟอร์ม --- */
+.form-header {
+  text-align: center;
+  margin-bottom: 35px;
+  animation: fadeInDown 0.5s ease-out forwards;
+}
+
+.form-header h1 {
+  color: var(--primary-color);
+  font-size: 2.2em;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.form-header p {
+  color: var(--secondary-color);
+  font-size: 1.1em;
+}
+
+/* --- ส่วนของฟอร์ม (Form Sections & Groups) --- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px; /* ระยะห่างระหว่าง form group/section */
+}
+
+.form-section {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Responsive grid */
+  gap: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid var(--medium-gray-color); /* เส้นคั่นบางๆ */
+  margin-bottom: 15px;
+}
+.form-section:last-of-type { /* section สุดท้ายไม่ต้องมีเส้นคั่น */
+    border-bottom: none;
+}
+
+
+.social-header {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: var(--primary-color);
+  font-size: 1.5em;
+  font-weight: 500;
+  text-align: left;
+  padding-bottom: 5px;
+  border-bottom: 2px solid var(--primary-color);
+  display: inline-block; /* ให้ border-bottom กว้างตาม text */
+}
+
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  position: relative; /* สำหรับ input icon ถ้ามี */
+  animation: fadeInUp 0.5s ease-out forwards;
+  opacity: 0; /* Start hidden for staggered animation */
+}
+
+/* Staggered animation for form groups */
+.form-group:nth-child(1) { animation-delay: 0.1s; }
+.form-group:nth-child(2) { animation-delay: 0.2s; }
+.form-group:nth-child(3) { animation-delay: 0.3s; }
+/* ... เพิ่ม delay ต่อไปตามจำนวน form group ... */
+.form-section .form-group:nth-child(1) { animation-delay: 0.2s; }
+.form-section .form-group:nth-child(2) { animation-delay: 0.3s; }
+.social-section .form-group:nth-child(1) { animation-delay: 0.4s; }
+.social-section .form-group:nth-child(2) { animation-delay: 0.5s; }
+.social-section .form-group:nth-child(3) { animation-delay: 0.6s; }
+.social-section .form-group:nth-child(4) { animation-delay: 0.7s; }
+
+
+.form-group label {
+  margin-bottom: 8px;
+  color: var(--dark-gray-color);
+  font-weight: 500;
+  font-size: 0.95em;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  margin-right: 8px;
+  color: var(--secondary-color);
+  font-size: 1.1em;
+  transition: color var(--transition-speed) ease;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="url"],
+.form-group textarea {
+  padding: var(--input-padding);
+  border: 1px solid var(--medium-gray-color);
+  border-radius: var(--border-radius);
+  font-size: 1em;
+  font-family: var(--font-family);
+  color: var(--text-color);
+  background-color: var(--white-color);
+  transition: border-color var(--transition-speed) ease, box-shadow var(--transition-speed) ease;
+  width: 100%; /* ให้ input เต็มความกว้างของ parent */
+  box-sizing: border-box; /* รวม padding และ border ใน width/height */
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); /* เงาเมื่อ focus คล้าย Bootstrap */
+}
+.form-group input:focus + .input-icon, /* ถ้ามี icon */
+.form-group textarea:focus + .input-icon {
+    color: var(--primary-color);
+}
+
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+/* --- Form Actions (Button) --- */
+.form-actions {
+  margin-top: 20px;
+  text-align: right; /* หรือ center แล้วแต่ชอบ */
+  animation: fadeInUp 0.5s 0.8s ease-out forwards; /* Delay ให้แสดงหลัง field */
+  opacity: 0;
+}
+
+.button-primary {
+  background-color: var(--primary-color);
+  color: var(--white-color);
+  padding: 12px 25px;
+  border: none;
+  border-radius: var(--border-radius);
+  cursor: pointer;
+  font-size: 1.05em;
+  font-weight: 500;
+  transition: background-color var(--transition-speed) ease, transform var(--transition-speed) ease;
+  text-decoration: none; /* สำหรับกรณีใช้เป็น link */
+  display: inline-block; /* สำหรับกรณีใช้เป็น link */
+}
+
+.button-primary:hover:not(:disabled) {
+  background-color: var(--primary-hover-color);
+  transform: translateY(-2px); /* ยกปุ่มขึ้นเล็กน้อยเมื่อ hover */
+}
+
+.button-primary:disabled {
+  background-color: var(--medium-gray-color);
+  color: var(--secondary-color);
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* --- Messages (Success/Error) --- */
+.message {
+  margin-top: 20px;
+  padding: 12px 18px;
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-weight: 500;
+  animation: fadeInScaleUp 0.4s ease-out;
+}
+
+.message-success {
+  background-color: #d4edda; /* Light green */
+  color: #155724; /* Dark green */
+  border: 1px solid #c3e6cb;
+}
+
+.message-error {
+  background-color: #f8d7da; /* Light red */
+  color: #721c24; /* Dark red */
+  border: 1px solid #f5c6cb;
+}
+
+/* --- Loading Spinner Animation --- */
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: var(--light-gray-color);
+}
+
+.spinner {
+  border: 6px solid var(--medium-gray-color);
+  border-top: 6px solid var(--primary-color);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 20px;
+}
+
+.loading-container p {
+  font-size: 1.2em;
+  color: var(--secondary-color);
+}
+
+/* --- Keyframe Animations --- */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideUpFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Start slightly lower */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScaleUp {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 768px) {
+  .edit-contact-page {
+    flex-direction: column; /* Stack sidebar and content on smaller screens */
+  }
+
+  .sidebar {
+    width: 100%; /* Sidebar เต็มความกว้าง */
+    height: auto; /* ปรับความสูงอัตโนมัติ */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom:0; /* ลบ margin ด้านล่างของ sidebar */
+    /* อาจจะต้องปรับ styling ของ Sidebar menu ให้เป็นแนวนอน หรือแบบ hamburger */
+  }
+
+  .form-container {
+    margin: 0; /* ลบ margin ของ form container */
+    border-radius: 0; /* ลบ border-radius ของ form container */
+    padding: 20px; /* ลด padding */
+    max-width: 100%;
+  }
+
+  .form-section {
+    grid-template-columns: 1fr; /* Stack fields ใน section บน mobile */
+    gap: 15px;
+  }
+
+  .form-header h1 {
+    font-size: 1.8em;
+  }
+  .form-header p {
+    font-size: 1em;
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+  .button-primary {
+    width: 100%; /* ปุ่มเต็มความกว้าง */
+  }
+}

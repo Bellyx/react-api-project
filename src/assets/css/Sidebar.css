@@ -1,0 +1,100 @@
+/* Sidebar styles */
+.sidebar-navbar {
+  background-color: #ffffff;
+  width: 260px;
+  height: 100vh;
+  padding: 25px 20px;
+  box-sizing: border-box;
+  box-shadow: 2px 0 10px rgba(235, 227, 227, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-navbar h4 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #000000;
+  text-align: center;
+}
+
+.sidebar-navbar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sidebar-navbar li {
+  margin-bottom: 15px;
+}
+
+.sidebar-navbar a {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #000000;
+  font-weight: 500;
+  font-size: 1.05rem;
+  padding: 12px 15px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.1s ease;
+}
+
+.sidebar-navbar a.active {
+  background-color: #3498db;
+  color: #ffffff;
+}
+
+
+.sidebar-navbar a:hover {
+  background-color: #ff0015;
+  color: #ecf0f1;
+}
+
+.sidebar-navbar a svg {
+  margin-right: 15px;
+  font-size: 1.2rem;
+  color: #95a5a6;
+  transition: color 0.2s ease;
+}
+
+.sidebar-navbar a:hover svg {
+  color: #ecf0f1;
+}
+
+.sidebar-navbar .logout {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid #34495e;
+  color: #bdc3c7;
+  text-align: center;
+}
+
+.sidebar-navbar .logout div {
+  margin-bottom: 10px;
+}
+
+.sidebar-navbar .logout button {
+  background-color: #e74c3c;
+  border: none;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.sidebar-navbar .logout button:hover {
+  background-color: #c0392b;
+}
+.User-Acc{
+    color: black;
+
+}

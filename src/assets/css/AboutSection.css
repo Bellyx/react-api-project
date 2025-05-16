@@ -1,0 +1,42 @@
+.about-section {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-title {
+  font-size: 36px;
+  margin-bottom: 20px;
+  color: #333;
+  font-weight: bold;
+}
+
+.about-company {
+  font-size: 24px;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.about-description {
+  font-size: 18px;
+  color: #666;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about-title {
+    font-size: 28px;
+  }
+
+  .about-company {
+    font-size: 20px;
+  }
+
+  .about-description {
+    font-size: 16px;
+    padding: 0 10px;
+  }
+}
